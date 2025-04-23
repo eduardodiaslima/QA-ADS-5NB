@@ -1,0 +1,87 @@
+Missão 5 - Parte 2 -  23/04/2025:
+
+Guilherme Macedo de Lima - 63818 
+Caio Cesar Penha Soares - 101140
+Eduardo Dias Lima - 61208
+
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testcase.TestCaseFactory as TestCaseFactory
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testdata.TestDataFactory as TestDataFactory
+import com.kms.katalon.core.testobject.ObjectRepository as ObjectRepository
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WSBuiltInKeywords
+import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
+import internal.GlobalVariable as GlobalVariable
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.testobject.SelectorMethod
+
+import com.thoughtworks.selenium.Selenium
+import org.openqa.selenium.firefox.FirefoxDriver
+import org.openqa.selenium.WebDriver
+import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium
+import static org.junit.Assert.*
+import java.util.regex.Pattern
+import static org.apache.commons.lang3.StringUtils.join
+import org.testng.asserts.SoftAssert
+import com.kms.katalon.core.testdata.CSVData
+import org.openqa.selenium.Keys as Keys
+
+SoftAssert softAssertion = new SoftAssert();
+WebUI.openBrowser('https://www.google.com/')
+def driver = DriverFactory.getWebDriver()
+String baseUrl = "https://www.google.com/"
+selenium = new WebDriverBackedSelenium(driver, baseUrl)
+selenium.open("https://www.blazedemo.com/")
+selenium.click("xpath=(.//*[normalize-space(text()) and normalize-space(.)='destination of the week! The Beach!'])[1]/following::div[1]")
+selenium.click("xpath=(.//*[normalize-space(text()) and normalize-space(.)='destination of the week! The Beach!'])[1]/following::div[1]")
+selenium.click("name=fromPort")
+selenium.select("name=fromPort", "label=São Paolo")
+selenium.click("name=toPort")
+selenium.select("name=toPort", "label=New York")
+selenium.click("xpath=//input[@value='Find Flights']")
+selenium.click("xpath=//tr[4]/td/input")
+selenium.click("id=inputName")
+selenium.type("id=inputName", "Flavio")
+selenium.click("xpath=(.//*[normalize-space(text()) and normalize-space(.)='Name'])[1]/following::label[1]")
+selenium.click("xpath=(.//*[normalize-space(text()) and normalize-space(.)='Name'])[1]/following::label[1]")
+selenium.click("xpath=(.//*[normalize-space(text()) and normalize-space(.)='Name'])[1]/following::div[2]")
+selenium.click("id=address")
+selenium.type("id=address", ("rua abc").toString())
+selenium.click("id=city")
+selenium.type("id=city", ("Sõa paulo").toString())
+selenium.click("id=state")
+selenium.type("id=state", "SP")
+selenium.click("id=zipCode")
+selenium.type("id=zipCode", "06573290")
+selenium.click("xpath=(.//*[normalize-space(text()) and normalize-space(.)='Card Type'])[1]/following::div[1]")
+selenium.click("id=cardType")
+selenium.select("id=cardType", "label=American Express")
+selenium.click("xpath=(.//*[normalize-space(text()) and normalize-space(.)='Credit Card Number'])[1]/following::div[1]")
+selenium.click("xpath=(.//*[normalize-space(text()) and normalize-space(.)='Card Type'])[1]/following::label[1]")
+selenium.click("id=creditCardNumber")
+selenium.type("id=creditCardNumber", "111910651951509161")
+selenium.click("xpath=(.//*[normalize-space(text()) and normalize-space(.)='Credit Card Number'])[1]/following::div[2]")
+selenium.click("id=creditCardMonth")
+selenium.type("id=creditCardMonth", "01")
+selenium.click("id=creditCardYear")
+selenium.click("xpath=//body")
+selenium.type("id=creditCardYear", "2022")
+selenium.click("xpath=//body")
+selenium.type("id=city", ("São paulo").toString())
+selenium.click("id=nameOnCard")
+selenium.type("id=nameOnCard", "Flavinho")
+selenium.click("xpath=(.//*[normalize-space(text()) and normalize-space(.)='Name on Card'])[1]/following::label[1]")
+selenium.click("xpath=//input[@value='Purchase Flight']")
+selenium.click("link=home")
